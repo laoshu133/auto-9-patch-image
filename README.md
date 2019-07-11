@@ -25,9 +25,10 @@
 ```javascript
 import auto9Sprite from './src/index.js';
 
-const imageUrl = './examples/1.png';
+const imageOrUrl = './examples/1.png';
 
-auto9Sprite(imageUrl).then(ret => {
+// 同时支持 URL 或者 DOM Image
+auto9Sprite(imageOrUrl).then(ret => {
     console.log(ret); // { image, width, height, offset }
 
     // 配合 `border-image` 使用更佳，参见 Demo1
