@@ -1,9 +1,15 @@
-async function loadImage(url) {
+async function loadImage(url, options = {
+    crossOrigin: true
+}) {
     return new Promise((resolve, reject) => {
         const img = new Image();
         const clear = () => {
             img.onload = img.onerror = null;
         };
+
+        if(options && options.crossOrigin) {
+            img.crossOrigin = 'Anonymous';
+        }
 
         img.onload = () => {
             clear();
