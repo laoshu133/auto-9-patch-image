@@ -71,7 +71,7 @@ const isSimilarColorLine = (line1, line2) => {
     });
 };
 
-async function auto9Sprite(urlOrImage) {
+async function auto9PatchImage(urlOrImage) {
     let img = urlOrImage;
     if(typeof urlOrImage === 'string') {
         img = await loadImage(urlOrImage);
@@ -163,4 +163,4 @@ async function auto9Sprite(urlOrImage) {
     };
 }
 
-export default auto9Sprite;
+export default auto9PatchImage;

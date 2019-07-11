@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Auto 9 image slice sprite demo</title>
+    <title>Auto 9-patch image demo</title>
     <style>
         h1{
             margin: 10px;
@@ -43,7 +43,7 @@
     </style>
 </head>
 <body>
-    <h1>Auto 9 image slice sprite demo</h1>
+    <h1>Auto 9-patch image demo</h1>
 
     <div class="panel">
         <input type="file" id="inp" accept="image/*">
@@ -54,7 +54,7 @@
             <img crossOrigin alt="" id="ori_img">
         </div>
         <div class="panel">
-            <h2>Sprite image</h2>
+            <h2>Patch image</h2>
             <p hidden id="loader">Processing...</p>
             <img crossOrigin alt="" id="img">
         </div>
@@ -64,14 +64,14 @@
     </div>
 
     <script type="module">
-    import auto9Sprite from './src/index.js';
+    import auto9PatchImage from './src/index.js';
 
     (async () => {
-        async function testAuto9Sprite(url) {
+        async function testAuto9PatchImage(url) {
             ori_img.src = url;
             loader.hidden = false;
 
-            const ret = await auto9Sprite(url);
+            const ret = await auto9PatchImage(url);
             const { left, top, right, bottom } = ret.offset;
             const { width, height } = ret;
 
@@ -85,13 +85,13 @@
 
             demo.style.cssText = css.trim();
 
-            console.log('Auto9Sprite result:', ret);
+            console.log('Auto9PatchImage result:', ret);
             console.log('css:', css.trim());
         }
 
         async function main() {
             inp.onchange = e => {
-                testAuto9Sprite(URL.createObjectURL(e.target.files[0]));
+                testAuto9PatchImage(URL.createObjectURL(e.target.files[0]));
             };
 
             // Default debug url
@@ -99,7 +99,7 @@
                 ? RegExp.$1
                 : './examples/1.png';
 
-            testAuto9Sprite(testImageUrl);
+            testAuto9PatchImage(testImageUrl);
         }
 
         main();

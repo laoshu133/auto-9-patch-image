@@ -1,7 +1,7 @@
 {
-  "name": "auto-9-image-sprite",
+  "name": "auto-9-patch-image",
   "version": "1.0.0",
-  "description": "A 9 image slice sprite processer.",
+  "description": "A 9-ptach image processer.",
   "main": "src/index.js",
   "directories": {
     "example": "examples"
@@ -11,17 +11,18 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/laoshu133/auto-9-image-sprite.git"
+    "url": "git+https://github.com/laoshu133/auto-9-patch-image.git"
   },
   "keywords": [
     "image",
-    ".9",
-    "sprite"
+    "sprite",
+    "9-patch",
+    "auto-9-patch-image"
   ],
   "author": "xiaomi",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/laoshu133/auto-9-image-sprite/issues"
+    "url": "https://github.com/laoshu133/auto-9-patch-image/issues"
   },
-  "homepage": "https://github.com/laoshu133/auto-9-image-sprite#readme"
+  "homepage": "https://github.com/laoshu133/auto-9-patch-image#readme"
 }

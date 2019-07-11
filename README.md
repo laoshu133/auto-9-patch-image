@@ -1,4 +1,4 @@
-# auto-9-image-sprite
+# auto-9-patch-image
 
 ## 这是什么
 
@@ -8,27 +8,27 @@
 
 ## Demo
 
-[Demo1](https://raw.githack.com/laoshu133/auto-9-image-sprite/master/index.html)
+[Demo1](https://raw.githack.com/laoshu133/auto-9-patch-image/master/index.html)
 
-[Demo2](https://raw.githack.com/laoshu133/auto-9-image-sprite/master/index.html?url=./examples/2.png)
+[Demo2](https://raw.githack.com/laoshu133/auto-9-patch-image/master/index.html?url=./examples/2.png)
 
 ## 如何使用
 
 ### 安装
 
 ```
-> npm i -S auto-9-image-sprite
+> npm i -S auto-9-patch-image
 ```
 
 ### 引入使用
 
 ```javascript
-import auto9Sprite from './src/index.js';
+import auto9PatchImage from './src/index.js';
 
 const imageOrUrl = './examples/1.png';
 
 // 同时支持 URL 或者 DOM Image
-auto9Sprite(imageOrUrl).then(ret => {
+auto9PatchImage(imageOrUrl).then(ret => {
     console.log(ret); // { image, width, height, offset }
 
     // 配合 `border-image` 使用更佳，参见 Demo1
