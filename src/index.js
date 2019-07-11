@@ -71,8 +71,12 @@ const isSimilarColorLine = (line1, line2) => {
     });
 };
 
-async function auto9Sprite(url) {
-    const img = await loadImage(url);
+async function auto9Sprite(urlOrImage) {
+    let img = urlOrImage;
+    if(typeof urlOrImage === 'string') {
+        img = await loadImage(urlOrImage);
+    }
+
     const canvas = document.createElement('canvas');
     const ctx = canvas.getContext('2d');
     const { width, height } = img;
