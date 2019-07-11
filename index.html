@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Auto 9 image slice sprite demo</title>
+    <style>
+        h1{
+            margin: 10px;
+        }
+
+        .wrap{
+            overflow: hidden;
+        }
+
+        .wrap > .panel{
+            float: left;
+        }
+
+        .panel{
+            border: 1px solid #DDD;
+            margin: 10px;
+            padding: 10px 20px;
+            overflow: auto;
+        }
+
+        img{
+            display: block;
+            border: 1px solid green;
+            margin: 10px 0;
+            /* max-width: 80%; */
+        }
+
+        #demo{
+            border: 5px solid red;
+            margin: 10px 0;
+            padding: 20px;
+            width: 150px;
+            overflow: hidden;
+            resize: both;
+        }
+    </style>
+</head>
+<body>
+    <h1>Auto 9 image slice sprite demo</h1>
+
+    <div class="panel">
+        <input type="file" id="inp" accept="image/*">
+    </div>
+    <div class="wrap">
+        <div class="panel">
+            <h2>Origin image</h2>
+            <img alt="" id="ori_img">
+        </div>
+        <div class="panel">
+            <h2>Sprite image</h2>
+            <p hidden id="loader">Processing...</p>
+            <img alt="" id="img">
+        </div>
+    </div>
+    <div class="panel">
+        <div id="demo">Resize Me</div>
+    </div>
+
+    <script type="module">
+    import auto9Sprite from './src/index.js';
+
+    (async () => {
+        async function testAuto9Sprite(url) {
+            ori_img.src = url;
+            loader.hidden = false;
+
+            const ret = await auto9Sprite(url);
+            const { left, top, right, bottom } = ret.offset;
+            const { width, height } = ret;
+
+            loader.hidden = true;
+            img.src = ret.image;
+
+            const css = `
+                border-image: url(${ret.image}) ${top} ${width - right} ${height - bottom} ${left} fill;
+                border-width: ${top}px ${width - right}px ${height - bottom}px ${left}px;
+            `;
+
+            demo.style.cssText = css.trim();
+
+            console.log('Auto9Sprite result:', ret, css.trim());
+        }
+
+        async function main() {
+            inp.onchange = e => {
+                testAuto9Sprite(URL.createObjectURL(e.target.files[0]));
+            };
+
+            // Default debug url
+            let testImageUrl = /\burl=([^&]+)/.test(location.search)
+                ? RegExp.$1
+                : './examples/1.png';
+
+            testAuto9Sprite(testImageUrl);
+        }
+
+        main();
+    })();
+    </script>
+</body>
+</html>
