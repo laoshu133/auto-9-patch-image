@@ -4,7 +4,7 @@
 
 这是一个自动处理九宫格图片的库，类似于 Android 的 .9 图，它能够自动处理，并缩小图片。
 
-其灵感来自于 [onion_ring](https://github.com/kyubuns/onion_ring)，但由于需要直接在前端环境使用，然后就有了当前 2个小时的实现。
+其灵感来自于 [onion_ring](https://github.com/kyubuns/onion_ring)，但由于需要直接在前端环境使用，然后就有了当前 2小时的实现。
 
 ## Demo
 
