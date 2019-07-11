@@ -51,12 +51,12 @@
     <div class="wrap">
         <div class="panel">
             <h2>Origin image</h2>
-            <img alt="" id="ori_img">
+            <img crossOrigin alt="" id="ori_img">
         </div>
         <div class="panel">
             <h2>Sprite image</h2>
             <p hidden id="loader">Processing...</p>
-            <img alt="" id="img">
+            <img crossOrigin alt="" id="img">
         </div>
     </div>
     <div class="panel">
@@ -85,7 +85,8 @@
 
             demo.style.cssText = css.trim();
 
-            console.log('Auto9Sprite result:', ret, css.trim());
+            console.log('Auto9Sprite result:', ret);
+            console.log('css:', css.trim());
         }
 
         async function main() {
