@@ -1,0 +1,27 @@
+{
+  "name": "auto-9-image-sprite",
+  "version": "1.0.0",
+  "description": "A 9 image slice sprite processer.",
+  "main": "src/index.js",
+  "directories": {
+    "example": "examples"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/laoshu133/auto-9-image-sprite.git"
+  },
+  "keywords": [
+    "image",
+    ".9",
+    "sprite"
+  ],
+  "author": "xiaomi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/laoshu133/auto-9-image-sprite/issues"
+  },
+  "homepage": "https://github.com/laoshu133/auto-9-image-sprite#readme"
+}
